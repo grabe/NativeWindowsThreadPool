@@ -8,6 +8,6 @@ Motivation for this concept (native OS thread pool) came from a need for more di
 
 Also, my tests revealed that in comparing using .NET managed threads exclusively, and native OS threads, the disparity between user mode and kernel mode execution isn't discernable. The reason for this is that simulated multitasking with .NET managed threads only avoids a very small percentage of kernel mode context switching. If a .NET app has 5 threads and so 5 context switches are avoided, compare those 5 to hundreds or thousands of threads listed in Task Manager details. 
 
-Moreover, the .NET app has to have at least 1 native OS thread. Create a console app and have it do nothing but sleep for a minute then look at Task Manager and you’ll see 5-8 threads. Thus, how many context switches are really saved?
+Moreover, the .NET app has to have at least 1 native OS thread. Create a console app and have it do nothing but sleep for a minute then look at Task Manager and you’ll see 5-8 threads. Thus, how many context switches are really saved? After all, a quad core CPU can only execute 4 threads at a time.
 
 Anyone may use the code in whole or in part as they deem fit.
